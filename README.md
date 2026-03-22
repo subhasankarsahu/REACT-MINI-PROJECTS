@@ -13,6 +13,7 @@ Each folder contains a small project focused on a specific concept:
 - 🔢 **Counter App** – Basics of state management using `useState`
 - 🎨 **Background Changer** – Playing with events and dynamic styling
 - 🔐 **Password Generator** – Logic building + React hooks
+- 💱 **Currency Converter** - Uses API and real-time data
 
 More projects coming soon...
 
