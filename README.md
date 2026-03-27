@@ -10,10 +10,14 @@ I believe the best way to learn is by building, so instead of just watching tuto
 
 Each folder contains a small project focused on a specific concept:
 
-- 🔢 **Counter App** – Basics of state management using `useState`
-- 🎨 **Background Changer** – Playing with events and dynamic styling
-- 🔐 **Password Generator** – Logic building + React hooks
-- 💱 **Currency Converter** - Uses API and real-time data
+- 🔢 Counter App – Basics of state management using useState
+- 🎨 Background Changer – Playing with events and dynamic styling
+- 🔐 Password Generator – Logic building + React hooks
+- 💱 Currency Converter – Uses API and real-time data
+- 🧭 React Router – Navigation and multi-page setup using React Router
+- 🧠 Context API – Global state management without prop drilling
+- 🌗 Theme Switcher – Dark/Light mode using Context and DOM manipulation
+- 📝 Todo App – Full CRUD app with Context API and localStorage persistence
 
 More projects coming soon...
 
