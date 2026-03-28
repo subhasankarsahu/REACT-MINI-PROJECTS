@@ -37,7 +37,8 @@ More projects coming soon...
 - React.js  
 - JavaScript (ES6+)  
 - HTML5  
-- CSS3  
+- CSS3
+- Tailwind CSS  
 
 ---
 
