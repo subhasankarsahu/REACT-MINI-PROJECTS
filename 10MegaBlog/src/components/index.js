@@ -8,3 +8,7 @@ export { default as RTE } from './RTE.jsx';
 export { default as Button } from './Button.jsx';
 export { default as Select } from './Select.jsx';
 export { default as PostForm } from './post-form/PostForm.jsx';
+export { default as SignUp } from './SignUp.jsx';
+export { default as Login } from './Login.jsx';
+export { default as AuthLayout } from './AuthLayout.jsx';
+export { default as Protected } from './AuthLayout.jsx';

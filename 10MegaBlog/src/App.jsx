@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import authService from './appwrite/auth';
 import { login, logout } from './store/authSlice';
-import { Footer, Header } from './components';
-import { Outlet } from 'react-router-dom';
+import { Footer, Header, Login, SignUp } from './components';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -34,7 +34,11 @@ function App() {
       <div className="w-full block">
         <Header />
         <main>
-          TODO
+          <Routes>
+            <Route path="/" element={<div className="p-4">Home</div>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+          </Routes>
         </main>
         <Footer />
       </div>
