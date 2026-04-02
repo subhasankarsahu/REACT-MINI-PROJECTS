@@ -3,3 +3,8 @@ export { default as Footer } from './Footer/Footer';
 export { default as Container } from './container/Container.jsx';
 export { default as Logo } from './Logo';
 export { default as LogoutBtn } from './LogoutBtn/LogoutBtn.jsx';
+export { default as Input } from './Input.jsx';
+export { default as RTE } from './RTE.jsx';
+export { default as Button } from './Button.jsx';
+export { default as Select } from './Select.jsx';
+export { default as PostForm } from './post-form/PostForm.jsx';
