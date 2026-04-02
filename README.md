@@ -34,11 +34,12 @@ More projects coming soon...
 
 ## ⚙️ Tech Stack
 
-- React.js  
+- React.js (Redux)
 - JavaScript (ES6+)  
 - HTML5  
 - CSS3
-- Tailwind CSS  
+- Tailwind CSS
+- AppWrite
 
 ---
 
