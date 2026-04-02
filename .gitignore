@@ -2,3 +2,4 @@ package.json*
 package-lock.json*
 .gitattributes
 node_modules/
+10MegaBlog/.env
