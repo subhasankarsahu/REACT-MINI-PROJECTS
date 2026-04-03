@@ -1,16 +1,93 @@
-# React + Vite
+# Redux Toolkit Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React mini project that demonstrates how to build a todo list using **Redux Toolkit** for global state management. This project is designed as a learning exercise for understanding Redux actions, reducers, dispatching, and store setup in a small but practical app.
 
-Currently, two official plugins are available:
+## What This Project Does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This app lets you:
 
-## React Compiler
+- add a new todo item
+- view the todo list
+- delete a todo item from the list
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The todo data is stored in Redux state, so the UI updates immediately when you dispatch an action.
 
-## Expanding the ESLint configuration
+## How It Is Designed
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The project follows a clean component-based structure:
+
+- `App.jsx` renders the main layout
+- `AddTodo.jsx` handles the input form and dispatches the add action
+- `Todo.jsx` displays all todos and dispatches the remove action
+- `todoSlice.js` contains the Redux logic for todo actions and state updates
+- `store.js` configures the Redux store
+
+The design is intentionally minimal and focused on functionality. The interface uses utility classes for spacing, colors, buttons, and layout so the app stays easy to read and easy to extend.
+
+## Tech Stack
+
+- `React 19`
+- `Redux Toolkit`
+- `React Redux`
+- `Vite`
+- `Tailwind CSS`
+- `JavaScript`
+
+## Folder Structure
+
+```bash
+09reduxToolTodo/
+|-- src/
+|   |-- app/
+|   |   `-- store.js
+|   |-- components/
+|   |   |-- AddTodo.jsx
+|   |   `-- Todo.jsx
+|   |-- features/
+|   |   `-- todo/
+|   |       `-- todoSlice.js
+|   |-- App.jsx
+|   |-- App.css
+|   |-- index.css
+|   `-- main.jsx
+```
+
+## State Management Flow
+
+1. The app starts with an initial todo item in Redux state.
+2. The user types a new todo into the input field.
+3. On form submit, `addTodo` is dispatched.
+4. Redux Toolkit updates the `todos` array in the store.
+5. The todo list re-renders automatically.
+6. Clicking the delete button dispatches `removeTodo`, which removes that item from state.
+
+## How to Use
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start the development server:
+
+```bash
+npm run dev
+```
+
+3. Open the app in your browser and start adding or deleting todos.
+
+## What I Learned
+
+This mini project is useful for learning:
+
+- how Redux Toolkit simplifies Redux logic
+- how to create slices with `createSlice`
+- how to use `useDispatch` and `useSelector`
+- how to share state across components
+- how to structure a small React app cleanly
+
+## Notes
+
+- Todos are stored only in memory and reset when the page refreshes.
+- This project is best used as a beginner-friendly Redux Toolkit demo for your GitHub portfolio.
