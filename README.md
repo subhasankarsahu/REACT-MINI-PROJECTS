@@ -18,6 +18,8 @@ Each folder contains a small project focused on a specific concept:
 - 🧠 Context API – Global state management without prop drilling
 - 🌗 Theme Switcher – Dark/Light mode using Context and DOM manipulation
 - 📝 Todo App – Full CRUD app with Context API and localStorage persistence
+- 🗂️ Redux Todo App – State management using Redux Toolkit
+- 📝 Mega Blog App – Full-stack blog platform using React + Appwrite (authentication, posts, CRUD operations, and backend integration)
 
 More projects coming soon...
 
