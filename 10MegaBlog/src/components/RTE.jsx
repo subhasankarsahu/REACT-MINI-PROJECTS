@@ -11,11 +11,12 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
                 control={control}
                 render={({ field: { onChange } }) => (
                     <Editor
+                        tinymceScriptSrc="https://cdn.jsdelivr.net/npm/tinymce@7/tinymce.min.js"
                         initialValue={defaultValue}
                         init={{
-                            initialValue: defaultValue,
                             height: 500,
                             menubar: true,
+                            license_key: "gpl",
                             plugins: [
                                 "image",
                                 "advlist",

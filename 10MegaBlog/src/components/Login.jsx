@@ -11,7 +11,12 @@ import {useForm} from "react-hook-form"
 function Login() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const {register, handleSubmit} = useForm()
+    const {register, handleSubmit} = useForm({
+        defaultValues: {
+            email: "subhasankarsahu5@gmail.com",
+            password: "pass1234",
+        }
+    })
     const [error, setError] = useState("")
 
     const login = async(data) => {
@@ -20,7 +25,13 @@ function Login() {
             const session = await authService.login(data)
             if (session) {
                 const userData = await authService.getCurrentUser()
-                if(userData) dispatch(authLogin(userData));
+                if (userData) {
+                    dispatch(authLogin({
+                        $id: userData.$id,
+                        name: userData.name,
+                        email: userData.email,
+                    }));
+                }
                 navigate("/")
             }
         } catch (error) {
@@ -30,25 +41,25 @@ function Login() {
 
   return (
     <div
-    className='flex items-center justify-center w-full'
+    className='flex items-center justify-center w-full px-4 py-10'
     >
-        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
-        <div className="mb-2 flex justify-center">
-                    <span className="inline-block w-full max-w-25">
-                        <Logo width="100%" />
+        <div className={`mx-auto w-full max-w-lg rounded-2xl border border-slate-200 bg-white p-8 shadow-sm`}>
+        <div className="mb-6 flex justify-center">
+                    <span className="inline-block">
+                        <Logo />
                     </span>
         </div>
-        <h2 className="text-center text-2xl font-bold leading-tight">Sign in to your account</h2>
-        <p className="mt-2 text-center text-base text-black/60">
+        <h2 className="text-center text-2xl font-bold leading-tight text-slate-900">Sign in</h2>
+        <p className="mt-2 text-center text-sm text-slate-600">
                     Don&apos;t have any account?&nbsp;
                     <Link
                         to="/signup"
-                        className="font-medium text-primary transition-all duration-200 hover:underline"
+                        className="font-medium text-slate-900 underline-offset-4 hover:underline"
                     >
                         Sign Up
                     </Link>
         </p>
-        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+        {error && <p className="mt-6 text-center text-sm text-red-600">{error}</p>}
         <form onSubmit={handleSubmit(login)} className='mt-8'>
             <div className='space-y-5'>
                 <Input
@@ -73,7 +84,7 @@ function Login() {
                 />
                 <Button
                 type="submit"
-                className="w-full"
+                className="w-full rounded-xl"
                 >Sign in</Button>
             </div>
         </form>

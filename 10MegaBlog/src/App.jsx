@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import authService from './appwrite/auth';
 import { login, logout } from './store/authSlice';
-import { Footer, Header, Login, SignUp } from './components';
-import { Route, Routes } from 'react-router-dom';
+import { Footer, Header } from './components';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -14,7 +14,11 @@ function App() {
     authService.getCurrentUser()
       .then((userData) => {
         if (userData) {
-          dispatch(login(userData));
+          dispatch(login({
+            $id: userData.$id,
+            name: userData.name,
+            email: userData.email,
+          }));
         } else {
           dispatch(logout());
         }
@@ -30,15 +34,11 @@ function App() {
 
 
   return !loading ? (
-    <div className='min-h-screen flex flex-wrap bg-gray-400 content-between'>
+    <div className='min-h-screen flex flex-wrap bg-slate-100 text-slate-900 content-between'>
       <div className="w-full block">
         <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<div className="p-4">Home</div>} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
-          </Routes>
+        <main className="min-h-[calc(100vh-160px)]">
+          <Outlet />
         </main>
         <Footer />
       </div>
